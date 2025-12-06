@@ -26,7 +26,6 @@ function App() {
     setTodos(currentTodos => {
       return currentTodos.map(todo => {
         if(todo.id === id){
-          console.log(checked)
           return {...todo, completed}
         }
         return todo
@@ -66,7 +65,8 @@ function App() {
                 type="checkbox" 
                 checked={todo.completed} 
                 onChange={e => toggleTodo(todo.id, e.target.checked)}
-              /> {todo.title}
+              /> 
+              {todo.title}
               </label>
               <button onClick={() => deleteTodo(todo.id)} className="btn btn-danger">Delete</button>
           </li>
