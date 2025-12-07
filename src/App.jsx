@@ -17,6 +17,9 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault()
     setTodos(currentTodos => {
+
+      if(newItem === "") return currentTodos
+
       return [
         ...currentTodos,
         {
@@ -62,7 +65,7 @@ function App() {
       </form>
       <h1 className="header">To Do List</h1>
       <ul className="list">
-        {todos.length === 0 && "No Todos"}
+        {todos.length == 0 && "No Todos"}
         {
           todos.map(todo => {
             return (
